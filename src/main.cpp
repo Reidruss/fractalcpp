@@ -29,8 +29,6 @@ void mapColor(int iters, int max_iters, uint8_t &r, uint8_t &g, uint8_t &b)
     }
     else
     {
-        // Outside the set: Smooth coloring or simple gradient
-        // Using a simple modulo trick for psychedelic colors
         r = static_cast<uint8_t>((iters * 9) % 256);
         g = static_cast<uint8_t>((iters * 2) % 256);
         b = static_cast<uint8_t>((iters * 5) % 256);
@@ -46,7 +44,7 @@ int main(int argc, char *argv[])
     }
 
     string fractal_algorithm = argv[1];
-    transform(fractal_algorithm.begin(), fractal_algorithm.end(), fractal_algorithm.begin(), 
+    transform(fractal_algorithm.begin(), fractal_algorithm.end(), fractal_algorithm.begin(),
               [](unsigned char c){ return std::toupper(c); });
 
     string output_filename = argv[2];
