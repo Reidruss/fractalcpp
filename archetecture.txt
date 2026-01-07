@@ -1,0 +1,14 @@
+fractalcpp/
+├── src/
+│   ├── main.cpp
+│   ├── Fractal.cpp
+│   ├── Renderer.cpp
+│   └── ThreadPool.cpp
+├── include/
+│   ├── Fractal.hpp
+│   ├── Renderer.hpp
+│   └── ThreadPool.hpp
+├── objs/
+├── lib/
+├── makefile
+└── output/
