@@ -5,10 +5,13 @@ A high-performance C++ application that generates high-resolution fractals (Mand
 ## Generated Examples
 
 ### Mandelbrot Set
-![Mandelbrot Set](output/mandelbrot.png)
+![Mandelbrot Set](images/mandelbrot.png)
 
 ### Julia Set
-![Julia Set](output/julia.png)
+![Julia Set](images/julia.png)
+
+### BurningShip Set
+![BurningShip Set](images/burningship.png)
 
 *Note: The raw output is in PPM format. The images above were converted to PNG for display.*
 
