@@ -17,7 +17,6 @@ A high-performance C++ application that generates high-resolution fractals (Mand
 - **Multiple Fractals**: Supports both **Mandelbrot** and **Julia** sets.
 - **High Resolution**: Defaults to 4K (3840x2160) but supports custom resolutions.
 - **Customizable**: Adjustable max iterations and thread count.
-- **Portable**: No external dependencies (uses standard C++17 library).
 
 ## Project Structure
 ```
@@ -49,30 +48,33 @@ This will compile the source files and create the `main` executable.
 ## Usage
 
 ```bash
-./main <algorithm> <output_file> <num_threads> [width] [height]
+./main [options] <algorithm> <output_file>
 ```
 
-### Arguments
+### Positional Arguments
 - **algorithm**: `mandelbrot` or `julia` (case-insensitive).
 - **output_file**: Path for the output image (e.g., `output.ppm`).
-- **num_threads**: Number of worker threads to use.
-- **[width]** (Optional): Image width (default: 3840).
-- **[height]** (Optional): Image height (default: 2160).
+
+### Options
+- **-h**: Show help message.
+- **-t <n>**: Number of worker threads (default: 1).
+- **-d <width> <height>**: Image dimensions (default: 3840 2160).
+- **-i <n>**: Maximum iterations (default: 1000).
 
 ### Examples
 
 **Generate a standard 4K Mandelbrot set with 8 threads:**
 ```bash
-./main mandelbrot output/mandelbrot.ppm 8
+./main -t 8 mandelbrot output/mandelbrot.ppm
 ```
 
-**Generate a customized 8K Julia set:**
+**Generate a customized 1080p Julia set with 2000 iterations:**
 ```bash
-./main julia output/julia_8k.ppm 16 7680 4320
+./main -d 1920 1080 -i 2000 julia output/julia.ppm
 ```
 
 ## Viewing the Output
-The program outputs **PPM (Portable Pixel Map)** files. 
+The program outputs **PPM (Portable Pixel Map)** files.
 
 - **Linux**: Open with `eog`, `feh`, or `display`.
 - **Convert to PNG**: If you have ImageMagick installed:
