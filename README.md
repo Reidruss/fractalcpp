@@ -17,7 +17,7 @@ A high-performance C++ application that generates high-resolution fractals (Mand
 
 ## Features
 - **Multi-threaded Processing**: Uses a custom `ThreadPool` to parallelize rendering across rows.
-- **Multiple Fractals**: Supports both **Mandelbrot** and **Julia** sets.
+- **Multiple Fractals**: Supports **Mandelbrot**, **Julia**, and **BurningShip** sets.
 - **High Resolution**: Defaults to 4K (3840x2160) but supports custom resolutions.
 - **Customizable**: Adjustable max iterations and thread count.
 
@@ -25,7 +25,7 @@ A high-performance C++ application that generates high-resolution fractals (Mand
 ```
 fractalcpp/
 ├── include/
-│   ├── fractal.hpp      # Fractal math classes (Base, Mandelbrot, Julia)
+│   ├── fractal.hpp      # Fractal math classes
 │   ├── renderer.hpp     # Image buffer and PPM file writer
 │   └── threadpool.hpp   # Custom thread pool implementation
 ├── src/
@@ -55,7 +55,7 @@ This will compile the source files and create the `main` executable.
 ```
 
 ### Positional Arguments
-- **algorithm**: `mandelbrot` or `julia` (case-insensitive).
+- **algorithm**: `mandelbrot`, `julia`, or `burningship` (case-insensitive).
 - **output_file**: Path for the output image (e.g., `output.ppm`).
 
 ### Options
