@@ -1,0 +1,6 @@
+# Build artifacts
+main
+objs/
+
+# Output images
+output/

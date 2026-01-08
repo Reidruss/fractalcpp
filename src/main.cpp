@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
     int height = DEFAULT_HEIGHT;
     int max_iters = DEFAULT_ITERS;
     int num_threads = DEFAULT_THREADS;
-    
+
     vector<string> positionals;
 
     for (int i = 1; i < argc; ++i)
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
                 return 1;
             }
         }
-        else if (arg == "-t" || arg == "-n") // Support both -t and -n
+        else if (arg == "-t")
         {
             if (i + 1 < argc)
             {
@@ -126,9 +126,9 @@ int main(int argc, char *argv[])
     }
 
     string fractal_algorithm = positionals[0];
-    transform(fractal_algorithm.begin(), fractal_algorithm.end(), fractal_algorithm.begin(), 
+    transform(fractal_algorithm.begin(), fractal_algorithm.end(), fractal_algorithm.begin(),
               [](unsigned char c){ return std::toupper(c); });
-              
+
     string output_filename = positionals[1];
 
     // Viewport Settings (Complex Plane)
@@ -151,6 +151,10 @@ int main(int argc, char *argv[])
     else if (fractal_algorithm == "JULIA")
     {
         fractal = make_unique<Julia>(max_iters);
+    }
+    else if (fractal_algorithm == "BURNINGSHIP")
+    {
+        fractal = make_unique<BurningShip>(max_iters);
     }
     else
     {

@@ -12,7 +12,8 @@ using namespace std;
 
 
 // Need to add documentation comments to this.
-class ThreadPool {
+class ThreadPool
+{
     public:
         ThreadPool(size_t threads = thread::hardware_concurrency());
         ~ThreadPool();

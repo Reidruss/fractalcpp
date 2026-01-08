@@ -1,5 +1,6 @@
 #include "fractal.hpp"
 #include <complex>
+#include <cmath>
 
 using namespace std;
 
@@ -37,3 +38,22 @@ int Julia::calculate(double real, double imag) const
 
     return iter;
 }
+
+BurningShip::BurningShip(int max_iters) : Fractal(max_iters) {}
+
+int BurningShip::calculate(double real, double imag) const
+{
+    complex<double> c(real, imag);
+    complex<double> z(0, 0);
+
+    int iter = 0;
+    while (norm(z) <= 4.0 && iter < max_iters_)
+    {
+        z = complex<double>(abs(z.real()), abs(z.imag()));
+        z = z * z + c;
+        iter++;
+    }
+
+    return iter;
+}
+
