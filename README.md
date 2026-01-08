@@ -1,6 +1,6 @@
 # FractalCPP - Parallel Fractal Generator
 
-A high-performance C++ application that generates high-resolution fractals (Mandelbrot and Julia sets) using multi-threading. This project demonstrates custom thread pool implementation, complex number arithmetic, and PPM image rendering.
+A high-performance C++ application that generates high-resolution fractals using multi-threading. This project demonstrates custom thread pool implementation, complex number arithmetic, and PPM image rendering.
 
 ## Generated Examples
 
