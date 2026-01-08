@@ -3,7 +3,9 @@ main
 objs/
 
 # Output images
-output/
+output/BurningShip.ppm
+output/julia.ppm
+output/mandelbrot.ppm
 
 # Submission Script
 submit.sh
